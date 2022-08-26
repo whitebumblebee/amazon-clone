@@ -20,7 +20,7 @@ function Home() {
         {
           productList.map((product)=>{
             return(
-              <Product id={product.id} title={product.title} price={product.price} image={product.image} className="grid-item"/>
+              <Product key={product.id} title={product.title} price={product.price} image={product.image} className="grid-item"/>
             )
           })
         }

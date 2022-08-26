@@ -10,21 +10,18 @@ function Login() {
     const signIn = (e) =>{
         // no refreshing
         e.preventDefault();
-
+        auth.signInWithEmailAndPassword(email, password).then(auth => history.push('/')).catch(error => alert(error.message))
+       
     }
 
     const register = (e) =>{
         e.preventDefault();
 
-         auth
-            .createUserWithEmailAndPassword(email, password)
-            .then((auth) => {
-                // it successfully created a new user with email and password
-                if (auth) {
-                    history.push('/')
-                }
-            })
-            .catch(error => alert(error.message))
+        auth.createUserWithEmailAndPassword(email, password).then((auth)=>{
+          if(auth){
+            history.push('/');
+          }
+        }).catch(error => alert(error.message))
     }
   return (
     <div className='login'>
