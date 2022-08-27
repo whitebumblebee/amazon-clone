@@ -17,6 +17,7 @@ const [{}, dispatch] = useStateValue();
       }
     });
   };
+  const star = (Math.floor(Math.random()*5)+1);
   return (
     <div className='product'>
         <div className='product__info'>
@@ -27,7 +28,8 @@ const [{}, dispatch] = useStateValue();
             </p>
             <div className='product__rating'>
             
-              {Array((Math.floor(Math.random()*5)+2)).fill().map((_,i) => (
+              {
+                Array(star).fill().map((_,i) => (
                     <p>⭐</p> 
               ))}
              
